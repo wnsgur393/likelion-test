@@ -13,10 +13,10 @@ export default function Top() {
 
   useEffect(() => {
     setLoading(true);
-    let url = "https://shopping-website-server.onrender.com/products";
-    if (category === "mydata") url = "https://shopping-website-server.onrender.com/mydata";
-    else if (category === "clothes") url = "https://shopping-website-server.onrender.com/clothes";
-    else if (category === "shoes") url = "https://shopping-website-server.onrender.com/shoes";
+    let url = import.meta.env.VITE_API_URL + "/products";
+    if (category === "mydata") url = import.meta.env.VITE_API_URL + "/mydata";
+    else if (category === "clothes") url = import.meta.env.VITE_API_URL + "/clothes";
+    else if (category === "shoes") url = import.meta.env.VITE_API_URL + "/shoes";
     // etc는 별도 처리 필요시 추가
     axios
       .get(url)
